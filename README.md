@@ -64,4 +64,3 @@ Day1_AI_API/
 ├── main.py
 ├── requirements.txt
 ├── README.md
-└── __pycache__/
