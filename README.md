@@ -1,66 +1,51 @@
-# Day 1 - AI API using FastAPI
+# Day 1 - AI API using FastAPI and Gemma 2B
 
-## About the Project
+## Project Description
 
-This project demonstrates how an AI capability can be exposed through a FastAPI backend.
+This project demonstrates how to build a simple AI application using FastAPI and a local Large Language Model (LLM).
 
-The application accepts a text input from the user and processes it using a simple Python-based AI function.
-
-## Workflow
-
-User Input
-↓
-POST /generate
-↓
-FastAPI Backend
-↓
-AI Processing
-↓
-JSON Response
+The application accepts a user's text input through a REST API endpoint. FastAPI sends the input to Ollama, which runs the Gemma 2B language model locally. The generated response is then returned to the user in JSON format.
 
 ## Technologies Used
 
 - Python
 - FastAPI
 - Uvicorn
+- Ollama
+- Gemma 2B
+- Requests
+- REST API
+- JSON
+
+## Project Workflow
+
+The application follows this workflow:
+
+User
+↓
+POST /generate
+↓
+FastAPI Backend
+↓
+Ollama API
+↓
+Gemma 2B LLM
+↓
+Generated Response
+↓
+FastAPI
+↓
+JSON Response
 
 ## API Endpoint
 
 ### POST /generate
 
-The user sends a text input to the API.
+This endpoint accepts a text input from the user and generates a response using the Gemma 2B language model.
 
-Example request:
+### Example Request
 
+```json
 {
-    "text": "Explain artificial intelligence in simple terms"
+  "text": "Explain artificial intelligence in simple terms"
 }
-
-Example response:
-
-{
-    "input": "Explain artificial intelligence in simple terms",
-    "response": "Artificial Intelligence is the ability of computers to perform tasks that normally require human intelligence."
-}
-
-## How to Run
-
-Install the required packages:
-
-pip install -r requirements.txt
-
-Start the FastAPI server:
-
-uvicorn main:app --reload
-
-Open the API documentation:
-
-http://127.0.0.1:8000/docs
-
-## Project Structure
-
-Day1_AI_API/
-│
-├── main.py
-├── requirements.txt
-├── README.md
